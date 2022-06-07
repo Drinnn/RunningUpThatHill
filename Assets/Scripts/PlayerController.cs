@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float moveSpeed;
 
     private Rigidbody2D _rb;
+    private Animator _animator;
 
     private Vector2 _movementDirection;
     private Vector2 _mousePosition;
@@ -12,11 +13,13 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _animator = GetComponentInChildren<Animator>();
     }
 
     private void Update()
     {
         GetInput();
+        Animate();
     }
 
     private void FixedUpdate()
@@ -29,6 +32,7 @@ public class PlayerController : MonoBehaviour
     {
         _movementDirection.x = Input.GetAxisRaw("Horizontal");
         _movementDirection.y = Input.GetAxisRaw("Vertical");
+        _movementDirection.Normalize();
 
         _mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
@@ -42,5 +46,17 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 direction = _mousePosition - _rb.position;
         transform.up = direction;
+    }
+
+    private void Animate()
+    {
+        if (_movementDirection != Vector2.zero)
+        {
+            _animator.SetBool("IsMoving", true);
+        }
+        else
+        {
+            _animator.SetBool("IsMoving", false);
+        }
     }
 }
