@@ -19,7 +19,7 @@ public class PlayerHealth : MonoBehaviour
         UpdateHealthBar();
         if (_currentHealth <= 0)
         {
-            Die();
+            PlayerController.instance.Die();
         }
     }
 
@@ -28,10 +28,4 @@ public class PlayerHealth : MonoBehaviour
         float hpPercent = _currentHealth / maxHealth;
         healthBarFill.fillAmount = hpPercent;
     }
-
-    private void Die()
-    {
-        Destroy(gameObject);
-    }
-
 }

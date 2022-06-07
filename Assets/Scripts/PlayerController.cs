@@ -2,12 +2,15 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance;
+
     [SerializeField] private WeaponController weapon;
     [SerializeField] private float moveSpeed;
 
     private Rigidbody2D _rb;
     private Animator _animator;
 
+    private bool _canMove = true;
     private Vector2 _movementDirection;
     private Vector2 _mousePosition;
 
@@ -15,15 +18,19 @@ public class PlayerController : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponentInChildren<Animator>();
+        instance = this;
     }
 
     private void Update()
     {
-        GetInput();
-        Animate();
-        if (Input.GetButton("Fire1"))
+        if (_canMove)
         {
-            weapon.Shoot();
+            GetInput();
+            Animate();
+            if (Input.GetButton("Fire1"))
+            {
+                weapon.Shoot();
+            }
         }
     }
 
@@ -63,5 +70,11 @@ public class PlayerController : MonoBehaviour
         {
             _animator.SetBool("IsMoving", false);
         }
+    }
+
+    public void Die()
+    {
+        _animator.SetBool("IsDead", true);
+        _canMove = false;
     }
 }
