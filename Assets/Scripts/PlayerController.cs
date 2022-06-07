@@ -4,7 +4,7 @@ public class PlayerController : MonoBehaviour
 {
     public static PlayerController instance;
 
-    [SerializeField] private WeaponController weapon;
+    [SerializeField] private WeaponSystem weaponSystem;
     [SerializeField] private float moveSpeed;
 
     private Rigidbody2D _rb;
@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
             Animate();
             if (Input.GetButton("Fire1"))
             {
-                weapon.Shoot();
+                weaponSystem.CurrentWeapon.Shoot();
             }
         }
     }
