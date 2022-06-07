@@ -6,7 +6,14 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private Image healthBarFill;
     [SerializeField] private float maxHealth;
 
+    private Animator _animator;
+
     private float _currentHealth;
+
+    private void Awake()
+    {
+        _animator = GetComponent<Animator>();
+    }
 
     private void Start()
     {
@@ -31,6 +38,7 @@ public class EnemyController : MonoBehaviour
 
     private void Die()
     {
-        Destroy(gameObject);
+        _animator.SetBool("IsDead", true);
+        Destroy(gameObject, 3f);
     }
 }
