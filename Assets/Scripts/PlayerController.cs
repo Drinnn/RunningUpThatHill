@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private WeaponController weapon;
     [SerializeField] private float moveSpeed;
 
     private Rigidbody2D _rb;
@@ -20,6 +21,10 @@ public class PlayerController : MonoBehaviour
     {
         GetInput();
         Animate();
+        if (Input.GetButton("Fire1"))
+        {
+            weapon.Shoot();
+        }
     }
 
     private void FixedUpdate()
