@@ -16,7 +16,7 @@ public class WeaponController : MonoBehaviour
 
     public void Shoot()
     {
-        if (_nextShotTime <= Time.time)
+        if (_nextShotTime <= Time.time && ammo > 0)
         {
             foreach (Transform firePoint in firePoints)
             {

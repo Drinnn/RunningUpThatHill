@@ -52,6 +52,6 @@ public class WeaponSystem : MonoBehaviour
 
     private void RenderAmmoToUI()
     {
-        ammoText.text = $"{_currentWeapon.Ammo.ToString()}/∞";
+        ammoText.text = _currentWeapon.Ammo.ToString();
     }
 }
