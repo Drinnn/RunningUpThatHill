@@ -1,8 +1,12 @@
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class WeaponSystem : MonoBehaviour
 {
     [SerializeField] private WeaponController[] weapons;
+    [SerializeField] private Image weaponIconContainer;
+    [SerializeField] private TextMeshProUGUI ammoText;
 
     public WeaponController CurrentWeapon { get => _currentWeapon; }
 
@@ -10,17 +14,19 @@ public class WeaponSystem : MonoBehaviour
 
     private void Start()
     {
-        _currentWeapon = weapons[0];
+        EquipGun(0);
     }
 
     private void Update()
     {
         SwitchWeapons();
+        RenderAmmoToUI();
     }
 
     private void EquipGun(int gunIndex)
     {
         _currentWeapon = weapons[gunIndex];
+        ChangeWeaponIcon();
     }
 
     private void SwitchWeapons()
@@ -37,5 +43,15 @@ public class WeaponSystem : MonoBehaviour
         {
             EquipGun(2);
         }
+    }
+
+    private void ChangeWeaponIcon()
+    {
+        weaponIconContainer.sprite = _currentWeapon.Icon;
+    }
+
+    private void RenderAmmoToUI()
+    {
+        ammoText.text = $"{_currentWeapon.Ammo.ToString()}/∞";
     }
 }
