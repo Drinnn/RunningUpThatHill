@@ -21,9 +21,9 @@ public class WeaponController : MonoBehaviour
             foreach (Transform firePoint in firePoints)
             {
                 BulletController bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+                ammo--;
                 bullet.Damage = damage;
             }
-            ammo--;
             _nextShotTime = Time.time + (1f / shotsPerSecond);
         }
     }
