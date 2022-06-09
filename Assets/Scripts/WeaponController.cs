@@ -27,4 +27,9 @@ public class WeaponController : MonoBehaviour
             _nextShotTime = Time.time + (1f / shotsPerSecond);
         }
     }
+
+    public void AddAmmo(int amount)
+    {
+        ammo += amount;
+    }
 }

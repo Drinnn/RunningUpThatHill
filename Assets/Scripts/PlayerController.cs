@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (_canMove)
+        if (_canMove && !GameManager.instance.IsPaused)
         {
             GetInput();
             Animate();

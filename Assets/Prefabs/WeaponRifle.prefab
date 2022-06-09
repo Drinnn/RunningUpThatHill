@@ -162,8 +162,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 7511962674743215022, guid: 32067addec1ab4243a055224517a5983, type: 3}
+  icon: {fileID: 21300000, guid: b86dfcdc8f5540a4c93845e18b0fb2f9, type: 3}
   firePoints:
   - {fileID: 2966911998299267456}
   damage: 10
-  ammo: 100
+  ammo: 30
   shotsPerSecond: 10

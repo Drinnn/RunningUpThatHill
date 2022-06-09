@@ -8,7 +8,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private float initialCash = 500;
 
-    [HideInInspector] GameManager instance;
+    [HideInInspector] public static GameManager instance;
+    public float Cash { get => _cash; set => _cash = value; }
+    public bool IsPaused { get; set; }
 
     private float _cash;
 
@@ -48,17 +50,19 @@ public class GameManager : MonoBehaviour
 
     public void OpenShop()
     {
+        IsPaused = true;
         Time.timeScale = 0;
         shopMenu.SetActive(true);
     }
 
     public void CloseShop()
     {
+        IsPaused = false;
         Time.timeScale = 1;
         shopMenu.SetActive(false);
     }
 
-    private void UpdateMoneyText()
+    public void UpdateMoneyText()
     {
         cashText.text = _cash.ToString();
     }

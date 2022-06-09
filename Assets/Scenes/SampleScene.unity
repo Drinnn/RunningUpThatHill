@@ -680,7 +680,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1875534991}
+        m_TargetAssemblyTypeName: ShopItemAmmo, Assembly-CSharp
+        m_MethodName: BuyAmmo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &450392032
 GameObject:
   m_ObjectHideFlags: 0
@@ -690,6 +702,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 450392033}
+  - component: {fileID: 450392034}
   m_Layer: 5
   m_Name: Item (2)
   m_TagString: Untagged
@@ -719,6 +732,22 @@ RectTransform:
   m_AnchoredPosition: {x: 332.4, y: 98.65906}
   m_SizeDelta: {x: 220.3809, y: 217.6487}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &450392034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450392032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdc3a6ae9ec41fd438df4f385e953fe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priceText: {fileID: 693183212}
+  weapon: {fileID: 978036871}
+  cost: 100
+  ammoAmount: 60
 --- !u!1001 &501739735
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1010,7 +1039,6 @@ MonoBehaviour:
   shopMenu: {fileID: 1760253964}
   cashText: {fileID: 1484459978}
   initialCash: 500
-  instance: {fileID: 0}
 --- !u!4 &628342427
 Transform:
   m_ObjectHideFlags: 0
@@ -1894,7 +1922,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1811799602}
+        m_TargetAssemblyTypeName: ShopItemAmmo, Assembly-CSharp
+        m_MethodName: BuyAmmo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &921667340
 GameObject:
   m_ObjectHideFlags: 0
@@ -2732,7 +2772,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 450392034}
+        m_TargetAssemblyTypeName: ShopItemAmmo, Assembly-CSharp
+        m_MethodName: BuyAmmo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1126966987
 GameObject:
   m_ObjectHideFlags: 0
@@ -3636,7 +3688,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 99999
+  m_text: 50
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3722,6 +3774,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1811799601}
+  - component: {fileID: 1811799602}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -3751,6 +3804,22 @@ RectTransform:
   m_AnchoredPosition: {x: -142.19452, y: 98.65906}
   m_SizeDelta: {x: 220.3809, y: 217.6487}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1811799602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1811799600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdc3a6ae9ec41fd438df4f385e953fe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priceText: {fileID: 1803551399}
+  weapon: {fileID: 322779957}
+  cost: 50
+  ammoAmount: 24
 --- !u!1 &1829878953
 GameObject:
   m_ObjectHideFlags: 0
@@ -3895,6 +3964,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1875534990}
+  - component: {fileID: 1875534991}
   m_Layer: 5
   m_Name: Item (1)
   m_TagString: Untagged
@@ -3924,6 +3994,22 @@ RectTransform:
   m_AnchoredPosition: {x: 93.6, y: 98.65906}
   m_SizeDelta: {x: 220.3809, y: 217.6487}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1875534991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875534989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdc3a6ae9ec41fd438df4f385e953fe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priceText: {fileID: 1955272741}
+  weapon: {fileID: 836330121}
+  cost: 50
+  ammoAmount: 30
 --- !u!1 &1876479720
 GameObject:
   m_ObjectHideFlags: 0
@@ -4450,7 +4536,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 99999
+  m_text: 50
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5242,10 +5328,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: WeaponRifle
       objectReference: {fileID: 0}
-    - target: {fileID: 2966911998615208361, guid: 44e2b752dda10e34e9eb2f1c9f64ddab, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2966911998615208362, guid: 44e2b752dda10e34e9eb2f1c9f64ddab, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -5290,9 +5372,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2966911998615208363, guid: 44e2b752dda10e34e9eb2f1c9f64ddab, type: 3}
-      propertyPath: icon
-      value: 
-      objectReference: {fileID: 21300000, guid: b86dfcdc8f5540a4c93845e18b0fb2f9, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44e2b752dda10e34e9eb2f1c9f64ddab, type: 3}
