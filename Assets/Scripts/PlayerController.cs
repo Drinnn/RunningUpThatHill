@@ -26,7 +26,6 @@ public class PlayerController : MonoBehaviour
         if (_canMove && !GameManager.instance.IsPaused)
         {
             GetInput();
-            Animate();
             if (Input.GetButton("Fire1"))
             {
                 weaponSystem.CurrentWeapon.Shoot();
@@ -36,8 +35,11 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Move();
-        Rotate();
+        if (_canMove && !GameManager.instance.IsPaused)
+        {
+            Move();
+            Rotate();
+        }
     }
 
     private void GetInput()
@@ -52,6 +54,7 @@ public class PlayerController : MonoBehaviour
     private void Move()
     {
         _rb.MovePosition(_rb.position + _movementDirection * moveSpeed * Time.fixedDeltaTime);
+        Animate();
     }
 
     private void Rotate()
@@ -62,6 +65,7 @@ public class PlayerController : MonoBehaviour
 
     private void Animate()
     {
+        ResetStates();
         if (_movementDirection != Vector2.zero)
         {
             _animator.SetBool("IsMoving", true);
@@ -76,5 +80,12 @@ public class PlayerController : MonoBehaviour
     {
         _animator.SetBool("IsDead", true);
         _canMove = false;
+    }
+
+    private void ResetStates()
+    {
+        _animator.SetBool("PistolMode", false);
+        _animator.SetBool("ShotgunMode", false);
+        _animator.SetBool("RifleMode", false);
     }
 }

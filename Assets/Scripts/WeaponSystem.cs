@@ -4,6 +4,7 @@ using TMPro;
 
 public class WeaponSystem : MonoBehaviour
 {
+    [SerializeField] private Animator playerAnimator;
     [SerializeField] private WeaponController[] weapons;
     [SerializeField] private Image weaponIconContainer;
     [SerializeField] private TextMeshProUGUI ammoText;
@@ -11,6 +12,9 @@ public class WeaponSystem : MonoBehaviour
     public WeaponController CurrentWeapon { get => _currentWeapon; }
 
     private WeaponController _currentWeapon;
+    private bool _pistolMode;
+    private bool _shotgunMode;
+    private bool _rifleMode;
 
     private void Start()
     {
@@ -27,6 +31,7 @@ public class WeaponSystem : MonoBehaviour
     {
         _currentWeapon = weapons[gunIndex];
         ChangeWeaponIcon();
+        SetMode(gunIndex);
     }
 
     private void SwitchWeapons()
@@ -53,5 +58,40 @@ public class WeaponSystem : MonoBehaviour
     private void RenderAmmoToUI()
     {
         ammoText.text = _currentWeapon.Ammo.ToString();
+    }
+
+    private void SetMode(int gunIndex)
+    {
+        ResetModes();
+        ResetAnimator();
+        if (gunIndex == 0)
+        {
+            _pistolMode = true;
+            playerAnimator.SetBool("PistolMode", true);
+        }
+        else if (gunIndex == 1)
+        {
+            _shotgunMode = true;
+            playerAnimator.SetBool("ShotgunMode", true);
+        }
+        else if (gunIndex == 2)
+        {
+            _rifleMode = true;
+            playerAnimator.SetBool("RifleMode", true);
+        }
+    }
+
+    private void ResetModes()
+    {
+        _pistolMode = false;
+        _shotgunMode = false;
+        _rifleMode = false;
+    }
+
+    private void ResetAnimator()
+    {
+        playerAnimator.SetBool("PistolMode", false);
+        playerAnimator.SetBool("ShotgunMode", false);
+        playerAnimator.SetBool("RifleMode", false);
     }
 }

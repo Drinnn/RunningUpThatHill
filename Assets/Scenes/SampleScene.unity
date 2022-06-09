@@ -390,6 +390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80898fc88cdc9e74db32d2073ac165a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerAnimator: {fileID: 1890428353}
   weapons:
   - {fileID: 836330121}
   - {fileID: 322779957}
